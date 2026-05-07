@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        MusicManager manager = new MusicManager();
+        Map<String, Command> commands = new HashMap<>();
+
+
+        commands.put("help", new HelpCommand());
+        commands.put("exit", new ExitCommand());
+        commands.put("addsong", new AddSongCommand(manager));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Music Playlist System started. Type 'help' for commands.");
+
+        while (true) {
+            System.out.print("> ");
+            String input = scanner.nextLine().trim();
+            if (input.isEmpty()) continue;
+
+            String[] tokens = input.split("\\s+");
+            String commandName = tokens[0].toLowerCase();
+
+            String[] commandArgs = new String[tokens.length - 1];
+            System.arraycopy(tokens, 1, commandArgs, 0, tokens.length - 1);
+
+            if (commands.containsKey(commandName)) {
+                String result = commands.get(commandName).execute(commandArgs);
+                if (!result.isEmpty()) {
+                    System.out.println(result);
+                }
+            } else {
+                System.out.println("Error: Unknown command. Type 'help' for assistance.");
+            }
+        }
+    }
+}

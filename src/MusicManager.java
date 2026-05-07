@@ -5,11 +5,42 @@ public class MusicManager {
     private List<Song> allSongs;
     private List<Playlist> playlists;
     private int songCounter;
+    private String currentFileName = null;
 
     public MusicManager() {
         this.allSongs = new ArrayList<>();
         this.playlists = new ArrayList<>();
         this.songCounter = 1;
+    }
+
+
+    public boolean isFileOpened() {
+        return currentFileName != null;
+    }
+
+    public void setCurrentFileName(String fileName) {
+        this.currentFileName = fileName;
+    }
+
+    public String getCurrentFileName() {
+        return currentFileName;
+    }
+
+
+    public Song findSongById(String id) {
+        for (Song s : allSongs) {
+            if (s.getId().equalsIgnoreCase(id)) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public void clearData() {
+        allSongs.clear();
+        playlists.clear();
+        currentFileName = null;
+        songCounter = 1;
     }
 
     public String addSong(String title, String artist, String duration, String album, int year, String genre) {

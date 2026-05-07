@@ -12,11 +12,21 @@ public class Playlist {
         this.songs = new ArrayList<>();
     }
 
+
     public void addSong(Song song) {
         this.songs.add(song);
     }
 
+
+    public void addSongAt(Song song, int position) {
+        if (position >= 0 && position <= songs.size()) {
+            songs.add(position, song);
+        } else {
+            songs.add(song);
+        }
+    }
+
     public String getName() { return name; }
-    public List<Song> getSongs() { return songs; }
     public String getDescription() { return description; }
+    public List<Song> getSongs() { return songs; }
 }
