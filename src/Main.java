@@ -2,11 +2,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         MusicManager manager = new MusicManager();
         Map<String, Command> commands = new HashMap<>();
-
         commands.put("help", new HelpCommand());
         commands.put("exit", new ExitCommand());
         commands.put("open", new OpenCommand(manager));
@@ -17,6 +20,19 @@ public class Main {
         commands.put("listsongs", new ListSongsCommand(manager));
         commands.put("removesong", new RemoveSongCommand(manager));
         commands.put("songinfo", new SongInfoCommand(manager));
+        commands.put("createplaylist", new CreatePlaylistCommand(manager));
+        commands.put("addtoplaylist", new AddToPlaylistCommand(manager));
+        commands.put("removefromplaylist", new RemoveFromPlaylistCommand(manager));
+        commands.put("move", new MoveCommand(manager));
+        commands.put("showplaylist", new ShowPlaylistCommand(manager));
+        commands.put("shuffle", new ShuffleCommand(manager));
+        commands.put("dropplaylist", new DropPlaylistCommand(manager));
+        commands.put("play", new PlayCommand(manager));
+        commands.put("plays", new PlaysCommand(manager));
+        commands.put("toptracks", new TopTracksCommand(manager));
+        commands.put("topplaylists", new TopPlaylistsCommand(manager));
+        commands.put("topartists", new TopArtistsCommand(manager));
+        commands.put("lowactivity", new LowActivityCommand(manager));
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Music Playlist System started. Type 'help' for commands.");
@@ -25,9 +41,7 @@ public class Main {
             System.out.print("> ");
             String input = scanner.nextLine().trim();
 
-            if (input.isEmpty()) {
-                continue;
-            }
+            if (input.isEmpty()) continue;
 
             String[] tokens = input.split("\\s+");
             String commandName = tokens[0].toLowerCase();
@@ -46,10 +60,9 @@ public class Main {
                     break;
                 }
             } else {
-                System.out.println("Error: Unknown command. Type 'help' for assistance.");
+                System.out.println("Error: Unknown command.");
             }
         }
-
         scanner.close();
     }
 }
