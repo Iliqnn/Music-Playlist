@@ -1,0 +1,34 @@
+package music_model;
+
+import java.util.ArrayList;
+import java.util.List;
+/* Управлява колекция от песни и предоставя методи за манипулация на списъка. */
+public class Playlist {
+    private String name;
+    private String description;
+    private List<Song> songs;
+
+    public Playlist(String name, String description) {
+        this.name = name;
+        this.description = description;
+        this.songs = new ArrayList<>();
+    }
+
+
+    public void addSong(Song song) {
+        this.songs.add(song);
+    }
+
+
+    public void addSongAt(Song song, int position) {
+        if (position >= 0 && position <= songs.size()) {
+            songs.add(position, song);
+        } else {
+            songs.add(song);
+        }
+    }
+
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public List<Song> getSongs() { return songs; }
+}
