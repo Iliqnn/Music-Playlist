@@ -4,7 +4,7 @@ import music_core.MusicManager;
 import music_model.Song;
 
 import java.util.List;
-/* Премахва песен от главната библиотека и от всички плейлисти, в които тя участва. */
+/** Премахва песен от главната библиотека и от всички плейлисти, в които тя участва. */
 public class RemoveSongCommand implements Command {
     private MusicManager manager;
 

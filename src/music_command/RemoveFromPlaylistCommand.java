@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Премахва конкретна песен от даден плейлист, без да я изтрива от библиотеката. */
+/** Премахва конкретна песен от даден плейлист, без да я изтрива от библиотеката. */
 public class RemoveFromPlaylistCommand implements Command {
     private MusicManager manager;
 

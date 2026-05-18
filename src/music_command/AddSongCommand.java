@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Команда за добавяне на нова песен към общата библиотека. */
+/** Команда за добавяне на нова песен към общата библиотека. */
 public class AddSongCommand implements Command {
     private MusicManager manager;
 

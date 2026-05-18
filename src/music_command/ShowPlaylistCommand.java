@@ -5,7 +5,7 @@ import music_model.Playlist;
 import music_model.Song;
 
 import java.util.List;
-/* Команда за визуализиране на съдържанието на конкретен плейлист. */
+/** Команда за визуализиране на съдържанието на конкретен плейлист. */
 public class ShowPlaylistCommand implements Command {
     private MusicManager manager;
 

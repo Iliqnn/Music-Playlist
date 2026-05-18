@@ -1,5 +1,5 @@
 package music_command;
-/* Показва помощна информация за потребителя, включваща списък с поддържаните команди и техните параметри. */
+/** Показва помощна информация за потребителя, включваща списък с поддържаните команди и техните параметри. */
 public class HelpCommand implements Command {
     @Override
     public String execute(String[] args) {

@@ -5,7 +5,7 @@ import music_model.PlayEvent;
 import music_model.Playlist;
 
 import java.util.*;
-/* Генерира списък с песни или плейлисти, които не са били слушани скоро. */
+/** Генерира списък с песни или плейлисти, които не са били слушани скоро. */
 public class LowActivityCommand implements Command {
     private MusicManager manager;
 

@@ -3,7 +3,7 @@ package music_model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-/* Представлява модел на музикална песен с информация за заглавие, изпълнител и метаданни. */
+/** Представлява модел на музикална песен с информация за заглавие, изпълнител и метаданни. */
 public class Song {
     private String id;
     private String title;

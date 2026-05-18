@@ -4,7 +4,7 @@ import music_core.MusicManager;
 import music_model.Song;
 
 import java.util.List;
-/* Извежда списък с всички налични песни в библиотеката, заредени от текущия файл. */
+/** Извежда списък с всички налични песни в библиотеката, заредени от текущия файл. */
 public class ListSongsCommand implements Command {
     private MusicManager manager;
 

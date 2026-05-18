@@ -4,7 +4,7 @@ import music_core.FileHandler;
 import music_core.MusicManager;
 
 import java.io.IOException;
-/* Позволява на потребителя да запише текущото състояние на данните в нов файл с посочено от него име. */
+/** Позволява на потребителя да запише текущото състояние на данните в нов файл с посочено от него име. */
 public class SaveAsCommand implements Command {
     private MusicManager manager;
     private FileHandler fileHandler;

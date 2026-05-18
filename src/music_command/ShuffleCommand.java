@@ -5,7 +5,7 @@ import music_model.Playlist;
 
 import java.util.Collections;
 import java.util.Random;
-/* Команда за разбъркване на реда на песните в даден плейлист. */
+/** Команда за разбъркване на реда на песните в даден плейлист. */
 public class ShuffleCommand implements Command {
     private MusicManager manager;
 

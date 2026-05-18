@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Изтрива целия плейлист от системата. */
+/** Изтрива целия плейлист от системата. */
 public class DropPlaylistCommand implements Command {
     private MusicManager manager;
 

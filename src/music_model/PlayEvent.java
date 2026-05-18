@@ -1,7 +1,7 @@
 package music_model;
 
 import java.time.LocalDateTime;
-/* Модел, който съхранява информация за конкретно събитие на слушане (дата, час, песен). */
+/** Модел, който съхранява информация за конкретно събитие на слушане (дата, час, песен). */
 public class PlayEvent {
     private String songId;
     private String playlistName;

@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Симулира пускането на песен и регистрира събитие за слушане. */
+/** Симулира пускането на песен и регистрира събитие за слушане. */
 public class PlayCommand implements Command {
     private MusicManager manager;
 

@@ -2,7 +2,7 @@ package music_command;
 
 import music_core.MusicManager;
 import music_model.Song;
-/* Извлича и показва детайлна информация за конкретна песен и статистика на слушане. */
+/** Извлича и показва детайлна информация за конкретна песен и статистика на слушане. */
 public class SongInfoCommand implements Command {
     private MusicManager manager;
 

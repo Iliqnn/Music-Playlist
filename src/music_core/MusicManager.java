@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-/* Основен мениджър на приложението, който координира работата между командите и данните. */
+/** Основен мениджър на приложението, който координира работата между командите и данните. */
 public class MusicManager {
     private List<Song> allSongs;
     private List<Playlist> playlists;
@@ -45,7 +45,11 @@ public class MusicManager {
     }
     public List<PlayEvent> getPlayHistory() { return playHistory; }
 
-
+    /**
+     * Търси песен в общата библиотека по уникален идентификатор.
+     * @param id Идентификаторът на песента (напр. S1).
+     * @return Обект от тип Song или null, ако не е намерена.
+     */
     public Song findSongById(String id) {
         for (Song s : allSongs) {
             if (s.getId().equalsIgnoreCase(id)) {
@@ -54,14 +58,19 @@ public class MusicManager {
         }
         return null;
     }
-
+    /**
+     * Изчиства всички заредени данни (песни, плейлисти) и нулира брояча.
+     */
     public void clearData() {
         allSongs.clear();
         playlists.clear();
         currentFileName = null;
         songCounter = 1;
     }
-
+    /**
+     * Създава и добавя нова песен към библиотеката след проверка за дублиране.
+     * @return Съобщение за успех с генерираното ID или съобщение за грешка.
+     */
     public String addSong(String title, String artist, String duration, String album, int year, String genre) {
         for (Song s : allSongs) {
             if (s.getTitle().equalsIgnoreCase(title) && s.getArtist().equalsIgnoreCase(artist)) {
@@ -73,7 +82,11 @@ public class MusicManager {
         allSongs.add(new Song(id, title, artist, duration, album, year, genre));
         return "Success: Added song with ID " + id;
     }
-
+    /**
+     * Филтрира и извлича всички песни от конкретен изпълнител.
+     * @param artist Името на изпълнителя.
+     * @return Списък с намерените песни.
+     */
     public List<Song> getSongsByArtist(String artist) {
         List<Song> result = new ArrayList<>();
         for (Song s : allSongs) {
@@ -83,7 +96,11 @@ public class MusicManager {
         }
         return result;
     }
-
+    /**
+     * Създава нов плейлист, ако не съществува такъв със същото име.
+     * @param name Име на плейлиста.
+     * @param description Кратко описание.
+     */
     public String createPlaylist(String name, String description) {
         for (Playlist p : playlists) {
             if (p.getName().equalsIgnoreCase(name)) {
@@ -93,7 +110,12 @@ public class MusicManager {
         playlists.add(new Playlist(name, description));
         return "Success: music_model.Playlist '" + name + "' created.";
     }
-
+    /**
+     * Добавя песен към плейлист на конкретна позиция или в края му.
+     * @param playlistName Име на целевия плейлист.
+     * @param songId ID на песента.
+     * @param position Позиция (може да бъде null).
+     */
     public String addSongToPlaylist(String playlistName, String songId, Integer position) {
         Playlist targetPlaylist = null;
         for (Playlist p : playlists) {
@@ -120,7 +142,9 @@ public class MusicManager {
             return "Success: Added " + targetSong.getTitle() + " to " + playlistName;
         }
     }
-
+    /**
+     * Премахва песен от плейлист по зададено ID.
+     */
     public String removeFromPlaylist(String playlistName, String songId) {
         Playlist p = findPlaylistByName(playlistName);
         if (p == null) return "Error: music_model.Playlist not found.";
@@ -128,7 +152,11 @@ public class MusicManager {
         boolean removed = p.getSongs().removeIf(s -> s.getId().equalsIgnoreCase(songId));
         return removed ? "music_model.Song removed from " + playlistName : "music_model.Song not found in playlist.";
     }
-
+    /**
+     * Променя реда на песните вътре в плейлиста.
+     * @param from Стара позиция.
+     * @param to Нова позиция.
+     */
     public String moveSongInPlaylist(String playlistName, int from, int to) {
         Playlist p = findPlaylistByName(playlistName);
         if (p == null) return "Error: music_model.Playlist not found.";
@@ -142,6 +170,9 @@ public class MusicManager {
         s.add(to, song);
         return "Moved " + song.getTitle() + " from position " + from + " to " + to;
     }
+    /**
+     * Преобразува времетраене от формат "мм:сс" в общ брой секунди.
+     */
     public int parseDurationToSeconds(String duration) {
         try {
             String[] parts = duration.split(":");
@@ -152,7 +183,9 @@ public class MusicManager {
             return 0;
         }
     }
-
+    /**
+     * Преобразува секунди в формат "мм:сс".
+     */
     public String formatSecondsToDuration(int totalSeconds) {
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
@@ -164,7 +197,11 @@ public class MusicManager {
                 .filter(p -> p.getName().equalsIgnoreCase(name))
                 .findFirst().orElse(null);
     }
-
+    /**
+     * Регистрира пускането на песен и актуализира историята и брояча на слушанията.
+     * @param songId ID на песента.
+     * @param playlistName Име на плейлиста (опционално).
+     */
     public String playSong(String songId, String playlistName) {
         Song song = findSongById(songId);
         if (song == null) return "Error: music_model.Song not found.";

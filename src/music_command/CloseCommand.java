@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Затваря текущо отворения файл или сесия */
+/** Затваря текущо отворения файл или сесия */
 public class CloseCommand implements Command {
     private MusicManager manager;
 

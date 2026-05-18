@@ -6,7 +6,7 @@ import music_model.PlayEvent;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-/* Показва най-популярните плейлисти според общото време на слушане или брой пускания. */
+/** Показва най-популярните плейлисти според общото време на слушане или брой пускания. */
 public class TopPlaylistsCommand implements Command {
     private MusicManager manager;
 

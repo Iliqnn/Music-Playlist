@@ -6,7 +6,7 @@ import music_model.Song;
 
 import java.util.List;
 import java.util.stream.Collectors;
-/* Показва броя слушания на определена песен или в целия плейлист. */
+/** Показва броя слушания на определена песен или в целия плейлист. */
 public class PlaysCommand implements Command {
     private MusicManager manager;
 

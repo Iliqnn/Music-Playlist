@@ -6,7 +6,7 @@ import music_model.Song;
 
 import java.util.*;
 import java.util.stream.Collectors;
-/* Команда за генериране на статистика за най-слушаните песни. */
+/** Команда за генериране на статистика за най-слушаните песни. */
 public class TopTracksCommand implements Command {
     private MusicManager manager;
 

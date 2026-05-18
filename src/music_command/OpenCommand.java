@@ -6,7 +6,7 @@ import music_model.Song;
 
 import java.io.IOException;
 import java.util.List;
-/* Зарежда музикална библиотека от външен файл и инициализира данните в приложението. */
+/** Зарежда музикална библиотека от външен файл и инициализира данните в приложението. */
 public class OpenCommand implements Command {
     private MusicManager manager;
     private FileHandler fileHandler;

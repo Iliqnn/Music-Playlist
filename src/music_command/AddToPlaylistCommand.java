@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Добавя съществуваща песен от библиотеката към избран плейлист. */
+/** Добавя съществуваща песен от библиотеката към избран плейлист. */
 public class AddToPlaylistCommand implements Command {
     private MusicManager manager;
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileHandler {
-/* Отговаря за четенето и записването на данните за песните и плейлистите във външни файлове. */
+/** Отговаря за четенето и записването на данните за песните и плейлистите във външни файлове. */
     public void save(String fileName, List<Song> songs) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(fileName));
         for (Song s : songs) {

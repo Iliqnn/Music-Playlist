@@ -4,7 +4,7 @@ import music_core.FileHandler;
 import music_core.MusicManager;
 
 import java.io.IOException;
-/* Записва текущите промени по библиотеката и плейлистите в заредения файл. */
+/** Записва текущите промени по библиотеката и плейлистите в заредения файл. */
 public class SaveCommand implements Command {
     private MusicManager manager;
     private FileHandler fileHandler;

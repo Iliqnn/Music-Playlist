@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Премества песен от един плейлист в друг или променя позицията ѝ. */
+/** Премества песен от един плейлист в друг или променя позицията ѝ. */
 public class MoveCommand implements Command {
     private MusicManager manager;
 

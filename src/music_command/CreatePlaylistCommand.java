@@ -1,7 +1,7 @@
 package music_command;
 
 import music_core.MusicManager;
-/* Команда за създаване на нов празен плейлист. */
+/** Команда за създаване на нов празен плейлист. */
 public class CreatePlaylistCommand implements Command {
     private MusicManager manager;
 

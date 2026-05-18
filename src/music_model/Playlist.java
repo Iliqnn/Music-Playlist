@@ -2,7 +2,7 @@ package music_model;
 
 import java.util.ArrayList;
 import java.util.List;
-/* Управлява колекция от песни и предоставя методи за манипулация на списъка. */
+/** Управлява колекция от песни и предоставя методи за манипулация на списъка. */
 public class Playlist {
     private String name;
     private String description;

@@ -6,7 +6,7 @@ import music_core.MusicManager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-/* Входна точка на програмата. Инициализира потребителския интерфейс и обработва командите. */
+/** Входна точка на програмата. Инициализира потребителския интерфейс и обработва командите. */
 public class Main {
     public static void main(String[] args) {
         MusicManager manager = new MusicManager();

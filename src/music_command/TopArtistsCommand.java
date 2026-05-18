@@ -6,7 +6,7 @@ import music_model.Song;
 
 import java.util.*;
 import java.util.stream.Collectors;
-/* Извежда класация на най-слушаните изпълнители въз основа на историята. */
+/** Извежда класация на най-слушаните изпълнители въз основа на историята. */
 public class TopArtistsCommand implements Command {
     private MusicManager manager;
 
